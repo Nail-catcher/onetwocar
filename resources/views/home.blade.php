@@ -19,7 +19,14 @@
                                 <td>{{$order->botUser->phone ?? null}}</td>
                                 <td>{{$order->botUser->username ?? null}}</td>
                                 <td>{{$order->botUser->name ?? null}}</td>
-                       <td><a href="/cars/{{$order->car->id}}">{{$order->car->title}}</a></td>
+
+                       <td>
+                           @if(!empty($order->car->title))
+                           <a href="/cars/{{$order->car->id ?? }}">Автомобиль: {{$order->car->title}}</a>
+                               @elseif(!empty($order->set->title))
+                               Модель: {{$order->set->model->title}} Комплектация: {{$order->set->title}}
+                               @endif
+                       </td>
 
                        <td>{{$order->address ?? null}}</td>
                             </tr>

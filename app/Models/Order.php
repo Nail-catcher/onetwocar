@@ -18,4 +18,8 @@ class Order extends Model
     {
         return $this->belongsTo(BotUser::class, 'user_id');
     }
+    public function set(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Set::class);
+    }
 }

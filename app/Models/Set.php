@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Set extends Model
 {
     use HasFactory;
+
+    public function model(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(CarModel::class);
+    }
 }
