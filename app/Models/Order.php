@@ -12,7 +12,7 @@ class Order extends Model
 
     public function car(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Car::class);
+        return $this->belongsTo(Car::class, 'car_id');
     }
     public function botUser(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
@@ -20,6 +20,6 @@ class Order extends Model
     }
     public function set(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Set::class);
+        return $this->belongsTo(Set::class, 'set_id');
     }
 }
