@@ -21,10 +21,12 @@
                                 <td>{{$order->botUser->name ?? null}}</td>
 
                        <td>
-                           @if(!empty($order->car->title))
-                           <a href="/cars/{{$order->car->id ?? }}">Автомобиль: {{$order->car->title}}</a>
-                               @elseif(!empty($order->set->title))
+                           @if($order->car->title)
+                           <a href="/cars/{{$order->car->id ?? null}}">Автомобиль: {{$order->car->title}}</a>
+                               @elseif($order->set->title)
                                Модель: {{$order->set->model->title}} Комплектация: {{$order->set->title}}
+                               @else
+                               Нет данных
                                @endif
                        </td>
 
