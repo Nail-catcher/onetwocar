@@ -32,7 +32,7 @@ class MarkController extends Controller
      */
     public function index()
     {
-        $marks = Mark::all()->paginate(30);
+        $marks = Mark::orderBy('id','DESC')->paginate(30);
         return view('mark', ['marks' => $marks]);
     }
 
