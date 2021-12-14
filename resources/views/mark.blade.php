@@ -19,7 +19,7 @@
                                     <td>{{$mark->title ?? null}}</td>
 
                                     <td>
-                                        @if($model->visible==1)
+                                        @if($mark->visible==1)
                                             <b>Выборка включена</b>  <form name="visible" method="POST" action="/marks/visible">
                                                 @csrf
                                                 <input type="hidden" name="id" value="{{$mark->id}}" />

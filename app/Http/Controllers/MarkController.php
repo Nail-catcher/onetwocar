@@ -15,15 +15,15 @@ class MarkController extends Controller
     public function visible(Request $request)
     {
 
-        $model=Mark::whereId($request->id)->first();
-        if($model->visible==1){
-            $model->visible=0;
-            $model->save();
+        $mark=Mark::whereId($request->id)->first();
+        if($mark->visible==1){
+            $mark->visible=0;
+            $mark->save();
         } else {
-            $model->visible=1;
-            $model->save();
+            $mark->visible=1;
+            $mark->save();
         }
-        return redirect('/models');
+        return redirect('/marks');
     }
     /**
      * Display a listing of the resource.
